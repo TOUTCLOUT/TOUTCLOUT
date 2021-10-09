@@ -12,14 +12,10 @@ html {
   box-sizing: border-box;
 }
 
-/* body {
-  background: url(../img/Home\ -1.png);
-  background-size:cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height:100vh;
-  background-position: center;
-} */
+*::selection {
+  background: #eaad67;
+  color: #262728;
+}
 
 @font-face {
   font-family: "Playfair Display";
@@ -36,10 +32,14 @@ body {
 
 a {
   display: block;
-  /* width: 100%;
-  height: 100%; */
   text-decoration: none;
   cursor: none !important;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
 }
 
 body,
@@ -55,10 +55,10 @@ body a {
   pointer-events: none;
 }
 .cursor--small {
-  width: 5px;
-  height: 5px;
-  left: -2.5px;
-  top: -2.5px;
+  width: 7px;
+  height: 7px;
+  left: -3px;
+  top: -3px;
   border-radius: 50%;
   z-index: 11000;
   background: #dddddd;
@@ -74,9 +74,7 @@ body a {
 .menu-opener.active,
 .menu-opener-inner,
 .menu-opener-inner::before,
-.menu-opener-inner::after,
-.menu,
-.menu.active {
+.menu-opener-inner::after {
   -webkit-transition: 250ms all;
   transition: 250ms all;
 }
@@ -100,13 +98,18 @@ body a {
   top: 0;
   right: 0;
   left: 0;
+  transform: translateY(-100%);
 }
 .menu-logo img {
-  width: 100%;
   position: relative;
   z-index: 999;
   height: 2em;
 }
+
+#btnHamburger {
+  padding: 8px;
+}
+
 .upperBurger,
 .bun {
   display: block;
@@ -183,11 +186,10 @@ body a {
   top: 0;
 }
 .menu.active {
-  width: -webkit-calc(100% - 2rem);
-  width: 100%;
+  width: 101vw;
+  height: 101vh;
   visibility: visible;
   pointer-events: auto;
-  /*background: rgba(72,76,80,.9);*/
   background-color: rgb(38, 39, 40, 1);
   z-index: 2;
 }
@@ -252,14 +254,9 @@ body a {
     padding: 10px 0;
     font-size: 1.2em;
   }
-  .menu.active {
-    width: -webkit-calc(100% - 0.5rem);
-    width: calc(100% - 0.5rem);
-  }
 }
 @media screen and (max-width: 768px) {
   .menu-logo img {
-    width: 100%;
     height: 30px;
   }
 }
@@ -346,16 +343,36 @@ body a {
 }
 
 .home_content_title {
-  margin-bottom: 0.3em;
+  font-size: 2.4vmax;
+  margin-top: -0.002em;
 }
 
-.home_page .home_content h2 {
-  font-size: 40px;
+@media (min-width: 1920px) {
+  .home_content_title {
+    font-size: 2.4vmax;
+    margin-top: -0.18em;
+  }
 }
-.home_page .home_content h4 {
-  font-size: 25px;
+
+.home_content_title span {
+  opacity: 0;
+}
+
+.home_content_title--italic {
+  opacity: 1 !important;
+  font-variation-settings: "wght" 400;
+  transition: all ease-in 200ms;
+}
+
+.home_content_title--italic-active {
+  font-variation-settings: "wght" 700, "ital" 1;
+}
+
+.home_content_subtitle {
+  font-size: 1.4vmax;
   letter-spacing: 5px;
 }
+
 .home_page .home_content h2 i {
   font-weight: 900;
 }
@@ -367,7 +384,7 @@ body a {
   bottom: 0px;
   width: 50vmin;
   height: auto;
-  opacity: 1;
+  opacity: 0;
 }
 
 .home_page .flex_item .right_img {
@@ -377,7 +394,7 @@ body a {
   bottom: 0px;
   width: 70vmin;
   height: auto;
-  opacity: 1;
+  opacity: 0;
 }
 
 .home_page .menu li {
@@ -420,7 +437,7 @@ body a {
 .menu-inner {
   justify-content: center;
   height: 100vh;
-  padding-top: 30vh;
+  padding-top: 40vh;
 }
 
 .discover_video {
@@ -432,6 +449,7 @@ body a {
   height: 50vh;
   overflow: hidden;
   opacity: 1;
+  background-color: #fff;
 }
 
 .half-part_video--hidden {
@@ -1460,6 +1478,15 @@ ul.brand-listing li {
   .approach_contant .col-lg-3:nth-child(2) .content {
     margin-bottom: 30px;
   }
+  .home_content_title {
+    font-size: 30px;
+  }
+  .home_content_subtitle {
+    font-size: 22px;
+  }
+  .menu__email {
+    font-size: 30px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1478,6 +1505,15 @@ ul.brand-listing li {
     display: block;
     text-align: left;
     padding-left: 5rem;
+  }
+  .home_content_title {
+    font-size: 28px;
+  }
+  .home_content_subtitle {
+    font-size: 20px;
+  }
+  .menu__email {
+    font-size: 24px !important;
   }
   .home_page li.dropdown-toggle:hover .dropdown-menu {
     display: none;
@@ -1640,11 +1676,7 @@ ul.brand-listing li {
   .menu-logo {
     padding: 1em 1.5em;
   }
-  .home_page .home_content h2 {
-    font-size: 30px;
-  }
   .home_page .home_content h4 {
-    font-size: 20px;
     letter-spacing: 3px;
   }
   .menu-opener {
@@ -1941,4 +1973,30 @@ ul.brand-listing li {
   border-radius: 50%;
   border: 1px solid #dbdbdb;
   background-color: #dbdbdb;
+}
+
+/* Temporary home page release changes */
+.menu {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+.menu__email {
+  color: #dddddd;
+  font-size: 2vmax;
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all ease-in 200ms;
+}
+.menu__email:hover {
+  color: #eaad67;
+}
+.menu__hidden {
+  opacity: 0;
+  transform: translateY(50%);
+}
+@media screen and (max-width: 768px) {
+  .menu__email {
+    font-size: 1.5rem;
+  }
 }

@@ -5,9 +5,15 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Home page</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/black/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/black/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/black/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/black/site.webmanifest">
+
+  <title>TOUTCLOUT - Branding and Digital Marketing Agency</title>
+  <meta content="We are a fully integrated branding and digital agency that helps brands to create meaningful connections. Brand Ecosystem | Digital Strategy | Website & Technology" name="description" />
+  <meta content="Brand Ecosystem, Digital Strategy, Website & Technology" name="keywords" />
+  <meta content="author" content="TOUTCLOUT - Branding and Digital Marketing Agency in Gurgaon" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -32,16 +38,18 @@
         </video>
       </div>
       <div class="menu-logo">
-        <a href="index.html"><img src="assets/img/white_logo.svg" class="img-fluid" /></a>
-        <a id="btnHamburger" class="menu__toggle">
-          <span class="upperBurger"></span>
-          <span class="bun"></span>
-          <span class="lowerBurger">
-            <span class="lowerBurger__firstHalf"></span>
-            <span class="lowerBurger__secondHalf"></span>
-            <span class="lowerBurger__thirdHalf display-none"></span>
-          </span>
-        </a>
+        <a href="index.html"><img src="assets/img/white_logo.svg" class="img-logo" /></a>
+        <div class="hamburger__menu">
+          <a id="btnHamburger" class="menu__toggle">
+            <span class="upperBurger"></span>
+            <span class="bun"></span>
+            <span class="lowerBurger">
+              <span class="lowerBurger__firstHalf"></span>
+              <span class="lowerBurger__secondHalf"></span>
+              <span class="lowerBurger__thirdHalf display-none"></span>
+            </span>
+          </a>
+        </div>
       </div>
       <nav class="menu">
         <ul class="menu-inner">
@@ -59,13 +67,6 @@
           <li>
             <a href="tack_to_us.html" class="menu-link">Talk to us</a>
           </li>
-
-          <!-- <a href="#" class="menu-link">
-            <li>Templates</li>
-          </a>
-          <a href="#" class="menu-link">
-            <li>Contact</li>
-          </a> -->
         </ul>
       </nav>
       <div class="d-flex flex_item">
@@ -89,6 +90,16 @@
 
   <!-- <div id="preloader"></div> -->
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKENKBHGT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DKKENKBHGT');
+  </script>
+  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
