@@ -413,7 +413,7 @@ if (!isItContactUsPage && !isItTheHomePage) {
           message: this.message,
         };
 
-        const response = await fetch(`${baseUrl}/db/insert-enquiry`, {
+        const response = await fetch(`${baseUrl}/enquiry/insert-enquiry`, {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin
           cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
