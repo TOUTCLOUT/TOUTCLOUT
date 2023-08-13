@@ -19,6 +19,7 @@ if (window.matchMedia("(max-width: 1080px)").matches) {
   homePageVideo.playbackRate = 0.85;
 } else {
   homePageVideo.src = './assets/videos/splash_original.mp4';
+  homePageVideo.playbackRate = 1.4;
 }
 
 const initCursor = () => {
@@ -201,7 +202,7 @@ async function homePageOpacityPromise() {
   var homePageOpacity = anime({
     targets: ".home_page",
     opacity: [0, 1],
-    duration: 2000,
+    duration: 1700,
     easing: "easeInExpo",
     begin: function () {
       homePage.classList.remove("home_page--hidden");
@@ -215,8 +216,8 @@ async function textLetterAnimationPromise() {
     targets: ".home_content_title .letter",
     opacity: [0, 1],
     easing: animationEasing,
-    duration: 2250,
-    delay: (el, i) => 150 * (i + 2),
+    duration: 1800,
+    delay: (el, i) => 80 * (i + 1),
   });
   await Promise.resolve(textLetterAnimation.finished);
 }
@@ -227,7 +228,7 @@ async function homePageOpeningAnimationPromise() {
   homePageOpeningAnimation
     .add({
       targets: ".left_img, .right_img",
-      duration: 2000,
+      duration: 1200,
       opacity: [0, 1],
       easing: "easeInExpo",
     })
@@ -235,8 +236,7 @@ async function homePageOpeningAnimationPromise() {
       targets: ".menu-logo",
       opacity: [0, 1],
       translateY: ["-100%", 0],
-      delay: 1500,
-      duration: 3000,
+      duration: 1200,
       easing: "easeOutExpo",
     });
   await Promise.resolve(homePageOpeningAnimation.finished);
@@ -246,7 +246,7 @@ async function discoverVideoHidePromise() {
   var discoverVideoHide = anime({
     targets: ".discover_video",
     opacity: [1, 0],
-    duration: 3000,
+    duration: 1000,
     easing: "easeOutExpo",
   });
   await Promise.resolve(discoverVideoHide.finished);
@@ -282,7 +282,7 @@ window.onload = () => {
             });
           });
         });
-      }, 4500);
+      }, 3000);
     });
   });
 };
