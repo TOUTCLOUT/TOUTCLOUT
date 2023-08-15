@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /emailer.html
+Crawl-delay: 10
+Sitemap: https://www.toutclout.com/sitemap.xml
